@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:news/models/news_model/news_model.dart';
 import 'package:news/services/api_services.dart';
-import 'package:news/widgets/NewsBuilder.dart';
+import 'package:news/view/widgets/NewsBuilder.dart';
 
 class AllNewsScreen extends StatelessWidget {
   const AllNewsScreen({super.key});
