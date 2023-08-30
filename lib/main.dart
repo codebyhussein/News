@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:news/BottomNavigatonBar/layoutScreen.dart';
+import 'package:news/view/layoutScreen.dart';
 
 void main() {
   runApp(const MyApp());

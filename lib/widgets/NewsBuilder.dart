@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news/services/app_Function.dart';
-import 'package:news/widgets/constants.dart';
+import 'package:news/utils/constants.dart';
 
 class NewsBuilder extends StatelessWidget {
   NewsBuilder(
