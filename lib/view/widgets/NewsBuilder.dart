@@ -49,7 +49,6 @@ class NewsBuilder extends StatelessWidget {
                       width: 200.w,
                       child: Text(
                         title,
-                        textDirection: TextDirection.rtl,
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(

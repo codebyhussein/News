@@ -7,9 +7,9 @@ class ApiServices {
   // getdata business
   static Future getBusiness() async {
     var url = Uri.https('newsapi.org', 'v2/top-headlines', {
-      "country": "eg",
+      "country": "us",
       "category": "business",
-      "apiKey": "1892de611537491eae15e337592e5723"
+      "apiKey": "30832e797c864d8c994fb761b55bebff"
     });
     var response = await http.get(url);
 
@@ -26,9 +26,9 @@ class ApiServices {
 
   static Future getSports() async {
     var url = Uri.https('newsapi.org', 'v2/top-headlines', {
-      "country": "eg",
+      "country": "us",
       "category": "sports",
-      "apiKey": "1892de611537491eae15e337592e5723"
+      "apiKey": "30832e797c864d8c994fb761b55bebff"
     });
     var response = await http.get(url);
 
@@ -44,9 +44,9 @@ class ApiServices {
   // getdata science
   static Future getScience() async {
     var url = Uri.https('newsapi.org', 'v2/top-headlines', {
-      "country": "eg",
+      "country": "us",
       "category": "science",
-      "apiKey": "1892de611537491eae15e337592e5723"
+      "apiKey": "30832e797c864d8c994fb761b55bebff"
     });
     var response = await http.get(url);
 
@@ -57,5 +57,20 @@ class ApiServices {
       getAllNews.add(item);
     }
     return NewsModel.NewsFromSnapshot(getAllNews);
+  }
+
+  static Future<List<NewsModel>> getSearch(String? value) async {
+    var url = Uri.https('newsapi.org', 'v2/top-headlines',
+        {"q": "$value", "apiKey": "30832e797c864d8c994fb761b55bebff"});
+
+    var response = await http.get(url);
+
+    List searchResult = [];
+
+    Map data = jsonDecode(response.body);
+    for (var item in data['articles']) {
+      searchResult.add(item);
+    }
+    return NewsModel.NewsFromSnapshot(searchResult);
   }
 }

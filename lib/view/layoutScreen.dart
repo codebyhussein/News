@@ -6,6 +6,7 @@ import 'package:news/view/screens/business_Screen.dart';
 import 'package:news/view/screens/SportsScreen.dart';
 import 'package:news/view/screens/ScienceScreen.dart';
 import 'package:news/utils/constants.dart';
+import 'package:news/view/searchScreen.dart';
 
 class LayoutScreen extends StatefulWidget {
   const LayoutScreen({super.key});
@@ -42,7 +43,13 @@ class _LayoutScreenState extends State<LayoutScreen> {
           Padding(
             padding: const EdgeInsets.only(right: 10),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return SearchScreen();
+                  },
+                ));
+              },
               child: const Icon(IconlyLight.search),
             ),
           )
