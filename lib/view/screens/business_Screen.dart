@@ -15,7 +15,14 @@ class AllNewsScreen extends StatelessWidget {
       future: ApiServices.getBusiness(),
       builder: (context, snapshot) {
         if (snapshot.hasError) {
-          return const Center(child: Text('error hapend'));
+          return Center(
+              child: Text(
+            'watting',
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 25.sp,
+                fontWeight: FontWeight.bold),
+          ));
         } else if (snapshot.hasData) {
           List<NewsModel> getBusiness = snapshot.data;
           return ListView.separated(

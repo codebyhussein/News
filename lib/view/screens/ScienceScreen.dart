@@ -17,7 +17,14 @@ class ScienceScreen extends StatelessWidget {
       future: ApiServices.getScience(),
       builder: (context, snapshot) {
         if (snapshot.hasError) {
-          return const Center(child: Text('error hapend'));
+          return Center(
+              child: Text(
+            'watting',
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 25.sp,
+                fontWeight: FontWeight.bold),
+          ));
         } else if (snapshot.hasData) {
           List<NewsModel> getScience = snapshot.data;
           return ListView.separated(

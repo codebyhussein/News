@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:news/models/news_model/news_model.dart';
 import 'package:news/services/api_services.dart';
 import 'package:news/view/widgets/NewsBuilder.dart';
@@ -17,7 +15,14 @@ class SportsScreen extends StatelessWidget {
       future: ApiServices.getSports(),
       builder: (context, snapshot) {
         if (snapshot.hasError) {
-          return const Center(child: Text('error hapend'));
+          return Center(
+              child: Text(
+            'watting',
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 25.sp,
+                fontWeight: FontWeight.bold),
+          ));
         } else if (snapshot.hasData) {
           List<NewsModel> getSports = snapshot.data;
           return ListView.separated(

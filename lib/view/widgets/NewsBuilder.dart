@@ -42,6 +42,9 @@ class NewsBuilder extends StatelessWidget {
                         image: NetworkImage(
                           urlToImage,
                         ))),
+                SizedBox(
+                  width: 20.w,
+                ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
